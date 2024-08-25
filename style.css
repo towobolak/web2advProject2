@@ -3,16 +3,25 @@
     padding: 0;
     box-sizing: border-box;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
 body{
     background-color: rgb(71, 163, 238);
 }
-.startButton, .infoBox, .resultBox{
+.startButton, .infoBox, .quizBox, .resultBox{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
 }
+
+.infoBox.activateInfo, .quizBox.activateQuiz{
+    z-index: 5;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 .startButton button{
     font-size: 18px;
     font-weight: 300;
@@ -63,6 +72,7 @@ body{
     margin: 0 6px;
     height: 40px;
     width: 100px;
+    outline: none;
     border: transparent;
     border-radius: 6px;
     color: white;
@@ -96,16 +106,21 @@ body{
     position: relative;
     height: 70px;
     padding: 0 30px;
-    background: white;
+    background: rgba(118, 214, 147, 0.59);
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-radius: 5px 5px 0 0;
     box-shadow: 0px 2px 4px 1px grey;
 }
+.quizBox header img{
+    width: 12%;
+    padding-right: 10px;
+}
 .quizBox header .title{
     font-size: 20px;
     font-weight: 600;
+    padding-right: 10px;
 }
 .quizBox header .timer{
 display: flex;
@@ -268,3 +283,371 @@ background: rgb(111, 223, 111);
     transition: all 0.3s ease;
 }
 }
+@media only screen and (min-width: 768px) {
+    .containerDesktop{
+        background-color: rgb(71, 129, 238);
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+    .containerDesktop span{
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        display: block;
+        position: absolute;
+        bottom: -150px;
+        animation: animate 25s linear infinite;
+    }
+    .containerDesktop span:nth-child(odd){
+        border-radius: 50%;
+    }
+    .containerDesktop span:nth-child(1){
+        border-radius: 12px;
+    }
+    .containerDesktop span:nth-child(1){
+        width: 80px;
+        height: 80px;
+        left: 25%;
+        animation-delay: 0s;
+    }
+    .containerDesktop span:nth-child(2){
+        width: 20px;
+        height: 20px;
+        left: 10%;
+        animation-duration: 12s;
+        animation-delay: 2s;
+    }
+    .containerDesktop span:nth-child(3){
+        width: 20px;
+        height: 20px;
+        left: 70%;
+        animation-delay: 4s;
+    }
+    .containerDesktop span:nth-child(4){
+        width: 60px;
+        height: 60px;
+        left: 40%;
+        animation-duration: 18s;
+        animation-delay: 0s;
+    }
+    .containerDesktop span:nth-child(5){
+        width: 20px;
+        height: 20px;
+        left: 65%;
+        animation-delay: 0s;
+    }
+    .containerDesktop span:nth-child(6){
+        width:110px;
+        height: 110px;
+        left: 75%;
+        animation-delay: 3s;
+    }
+    .containerDesktop span:nth-child(7){
+        width:150px;
+        height: 150px;
+        left: 35%;
+        animation-delay: 7s;
+    }
+    .containerDesktop span:nth-child(8){
+        width:25px;
+        height: 25px;
+        left: 50%;
+        animation-duration: 45s;
+        animation-delay: 15s;
+    }
+    .containerDesktop span:nth-child(9){
+        width:15px;
+        height: 15px;
+        left: 20%;
+        animation-duration: 35s;
+        animation-delay: 2s;
+    }
+    .containerDesktop span:nth-child(10){
+        width:150px;
+        height: 150px;
+        left: 85%;
+        animation-duration: 11s;
+        animation-delay: 0s;
+    }
+    @keyframes animate{
+        0%{
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+        100%{
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+        }
+    }
+
+    .startButton, .infoBox, .resultBox{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease;
+    }
+    .startButton button{
+        font-size: 18px;
+        font-weight: 300;
+        color: rgb(84, 196, 84);
+        padding: 10px 22px;
+        outline: none;
+        border: none;
+        border-radius: 6px;
+        background-color: white;
+        cursor: pointer;
+    }
+    .infoBox{
+        width: 300px;
+        background-color: white;
+        border-radius: 6px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    .infoBox.activateInfo{
+        z-index: 5;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    .infoBox .informationTitle {
+        width: 100%;
+        border-bottom: 1.5px solid rgb(72, 148, 247);
+        align-items: center;
+        padding: 8px 30px;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .rules{
+        padding: 15px 20px;
+    }
+    .infoBox .rules .ruleInfo{
+        margin: 5px O;
+        font-size: 15px;
+    }
+    .infoBox .rules .ruleInfo span{
+        font-weight:500;
+        color: red;
+    }
+    .infoBox .buttons{
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 30px;
+        border-top: 1.5px solid rgb(72, 148, 247);
+    }
+    .infoBox .buttons button{
+        margin: 0 6px;
+        height: 40px;
+        width: 100px;
+        outline: none;
+        border: transparent;
+        border-radius: 6px;
+        color: white;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+    .buttons button.quit{
+        color: rgb(72, 148, 247);
+    }
+    .buttons button.result{
+        color: white;
+        background: rgb(72, 148, 247);
+    }
+    .buttons button.result:hover{
+        background: rgb(72, 148, 247);
+    }
+    .buttons button.quit:hover{
+        color: white;
+        background: rgb(72, 148, 247);
+    }
+    .quizBox{
+        width: 100%;
+        background: white;
+        border-radius: 6px;
+        margin: 10px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    .quizBox header{
+        position: relative;
+        height: 70px;
+        padding: 0 30px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 5px 5px 0 0;
+        box-shadow: 0px 2px 4px 1px grey;
+    }
+    .quizBox header .title{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .quizBox header .timer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 120px;
+    height: 40px;
+    background: rgb(193, 193, 193);
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 4px;
+    }
+    .quizBox header .timer .timerText{
+        font-size: 17px;
+        font-weight: 400;
+        user-select: none;
+    }
+    .quizBox header .timer .timerSec{
+        font-size: 17px;
+        font-weight: 600;
+        background: rgb(139, 127, 127);
+        width: 30px;
+        color: white;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 6px;
+        user-select: none;
+    }
+    .quizBox section{
+    padding: 25px 30px 20px 30px;
+    background: white;
+    }
+    .quizBox section .queText{
+        font-size: 25px;
+        font-weight: 500;
+    }
+    .quizBox section .optionList{
+        padding: 20px 0;
+        display: block;
+    }
+    section .optionList .option{
+        background: aliceblue;
+        border: 0.5px solid grey;
+        border-radius: 5px;
+        padding: 8px 15px;
+        margin-bottom: 12px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    section .optionList .option:hover{
+        color: rgb(74, 74, 246);
+        background: white;
+        border-color: grey;
+    }
+    section .optionList .option:last-child{
+        margin-bottom: 0px;
+    }
+    .optionList .option .icon{
+        height: 25px;
+        width: 25px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 15px;
+        line-height: 22px;
+        pointer-events: none;
+    }
+    .optionList .option .icon.tick{
+        color: rgb(57, 252, 57);
+        border-color:  rgb(57, 252, 57);
+        background: #d4edda;
+    }
+    .optionList .option .icon.cross{
+        color: rgb(252, 57, 57);
+        border-color: rgb(252, 57, 57);
+        background:  rgb(251, 255, 251);
+    }
+    .quizBox footer{
+        height: 60px;
+        width: 100%;
+        padding: 0 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .quizBox footer .totalQue span{
+        display: flex;
+        user-select: none;
+    }
+    footer .totalQue span p{
+        font-weight: 400;
+        font-size: 17px;
+        padding: 0 6px;
+    }
+    footer .totalQue span p:first-child{
+        padding-left: 0px;
+    }
+    footer .previousPage, .nextPage{
+        height: 40px;
+        padding: 0 13px;
+        font-size: 17px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        background: rgb(57, 129, 246);
+        border-radius: 6px;
+        border: 1px solid rgb(57, 129, 246);
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+    footer .previousPage:hover, .nextPage:hover{
+    background: rgb(111, 223, 111);
+    }
+    .resultBox{
+        background: white;
+        width: 80%;
+        padding: 25px 30px;
+        border-radius: 6px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    .resultBox .icon img{
+        width: 30%;
+    }
+    .resultBox .complete{
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .resultBox .scoreText span{
+        display: flex;
+    
+    }
+    .scoreText span p{
+        font-weight:500;
+        padding: 0 4px;
+    }
+    .resultBox .buttons{
+        margin: 20px 0;
+    }
+    .resultBox .buttons button{
+        height: 40px;
+        padding: 0 20px;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        font-weight: 500;
+        border-radius: 6px;
+        border: 1px solid;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    }
