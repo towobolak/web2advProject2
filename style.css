@@ -7,7 +7,7 @@
 body{
     background-color: rgb(71, 163, 238);
 }
-.startButton, .infoBox{
+.startButton, .infoBox, .resultBox{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -25,16 +25,18 @@ body{
     cursor: pointer;
 }
 .infoBox{
-    display: none;
     width: 300px;
     background-color: white;
     border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.8);
 }
 .infoBox .informationTitle {
     width: 100%;
     border-bottom: 1.5px solid rgb(72, 148, 247);
     align-items: center;
-    padding: 8px 20px;
+    padding: 8px 30px;
     font-size: 20px;
     font-weight: 400;
 }
@@ -86,8 +88,12 @@ body{
     background: white;
     border-radius: 6px;
     margin: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.8);
 }
 .quizBox header{
+    position: relative;
     height: 70px;
     padding: 0 30px;
     background: white;
@@ -111,4 +117,154 @@ background: rgb(193, 193, 193);
 border: 1px solid grey;
 border-radius: 4px;
 padding: 4px;
+}
+.quizBox header .timer .timerText{
+    font-size: 17px;
+    font-weight: 400;
+    user-select: none;
+}
+.quizBox header .timer .timerSec{
+    font-size: 17px;
+    font-weight: 600;
+    background: rgb(139, 127, 127);
+    width: 30px;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 6px;
+    user-select: none;
+}
+.quizBox section{
+padding: 25px 30px 20px 30px;
+background: white;
+}
+.quizBox section .queText{
+    font-size: 25px;
+    font-weight: 500;
+}
+.quizBox section .optionList{
+    padding: 20px 0;
+    display: block;
+}
+section .optionList .option{
+    background: aliceblue;
+    border: 0.5px solid grey;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+section .optionList .option:hover{
+    color: rgb(74, 74, 246);
+    background: white;
+    border-color: grey;
+}
+section .optionList .option:last-child{
+    margin-bottom: 0px;
+}
+.optionList .option .icon{
+    height: 25px;
+    width: 25px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 15px;
+    line-height: 22px;
+    pointer-events: none;
+}
+.optionList .option .icon.tick{
+    color: rgb(57, 252, 57);
+    border-color:  rgb(57, 252, 57);
+    background: #d4edda;
+}
+.optionList .option .icon.cross{
+    color: rgb(252, 57, 57);
+    border-color: rgb(252, 57, 57);
+    background:  rgb(251, 255, 251);
+}
+.quizBox footer{
+    height: 60px;
+    width: 100%;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.quizBox footer .totalQue span{
+    display: flex;
+    user-select: none;
+}
+footer .totalQue span p{
+    font-weight: 400;
+    font-size: 17px;
+    padding: 0 6px;
+}
+footer .totalQue span p:first-child{
+    padding-left: 0px;
+}
+footer .previousPage, .nextPage{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 17px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: rgb(57, 129, 246);
+    border-radius: 6px;
+    border: 1px solid rgb(57, 129, 246);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+footer .previousPage:hover, .nextPage:hover{
+background: rgb(111, 223, 111);
+}
+.resultBox{
+    background: white;
+    width: 80%;
+    padding: 25px 30px;
+    border-radius: 6px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+.resultBox .icon img{
+    width: 30%;
+}
+.resultBox .complete{
+    font-size: 20px;
+    font-weight: 500;
+}
+.resultBox .scoreText span{
+    display: flex;
+
+}
+.scoreText span p{
+    font-weight:500;
+    padding: 0 4px;
+}
+.resultBox .buttons{
+    margin: 20px 0;
+}
+.resultBox .buttons button{
+    height: 40px;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: 1px solid;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 }
