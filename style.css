@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media only screen and (max-width: 600px) {
+body{
+    background-color: rgb(71, 163, 238);
+}
+.startButton, .infoBox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.startButton button{
+    font-size: 18px;
+    font-weight: 300;
+    color: rgb(84, 196, 84);
+    padding: 10px 22px;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+}
+.infoBox{
+    display: none;
+    width: 300px;
+    background-color: white;
+    border-radius: 6px;
+}
+.infoBox .informationTitle {
+    width: 100%;
+    border-bottom: 1.5px solid rgb(72, 148, 247);
+    align-items: center;
+    padding: 8px 20px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.rules{
+    padding: 15px 20px;
+}
+.infoBox .rules .ruleInfo{
+    margin: 5px O;
+    font-size: 15px;
+}
+.infoBox .rules .ruleInfo span{
+    font-weight:500;
+    color: red;
+}
+.infoBox .buttons{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 30px;
+    border-top: 1.5px solid rgb(72, 148, 247);
+}
+.infoBox .buttons button{
+    margin: 0 6px;
+    height: 40px;
+    width: 100px;
+    border: transparent;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.buttons button.quit{
+    color: rgb(72, 148, 247);
+}
+.buttons button.result{
+    color: white;
+    background: rgb(72, 148, 247);
+}
+.buttons button.result:hover{
+    background: rgb(72, 148, 247);
+}
+.buttons button.quit:hover{
+    color: white;
+    background: rgb(72, 148, 247);
+}
+.quizBox{
+    width: 100%;
+    background: white;
+    border-radius: 6px;
+    margin: 10px;
+}
+.quizBox header{
+    height: 70px;
+    padding: 0 30px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 2px 4px 1px grey;
+}
+.quizBox header .title{
+    font-size: 20px;
+    font-weight: 600;
+}
+.quizBox header .timer{
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 120px;
+height: 40px;
+background: rgb(193, 193, 193);
+border: 1px solid grey;
+border-radius: 4px;
+padding: 4px;
+}
