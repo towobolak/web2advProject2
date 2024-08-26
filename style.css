@@ -7,14 +7,18 @@
 body{
     background-color: rgb(71, 163, 238);
 }
-.startButton, .infoBox, .quizBox, .resultBox{
+.startButton, .infoBox, .quizBox, .resultBox, form{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: all 0.3s ease;
 }
-.infoBox.activateInfo, .quizBox.activateQuiz, .resultBox.activateResult{
+.infoBox.activateInfo, 
+.quizBox.activateQuiz, 
+.resultBox.activateResult, 
+.formBox.activateLogin,
+.startBox.activateStart{
     z-index: 5;
     opacity: 1;
     pointer-events: auto;
@@ -50,6 +54,47 @@ body{
 .rules{
     padding: 15px 20px;
 }
+.formBox{
+    border-radius: 6px;
+}
+.container{
+    background-color: rgb(104, 249, 189);
+    height: 200px;
+    border-radius: 6px;
+}
+.container img{
+    position: absolute;
+    width: 30%;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+.container .heading{
+    width: 300px;
+    text-align: center;
+    border: 2px solid rgb(100, 248, 100);
+    padding: 10px;
+    height: 110px;
+    border-radius: 6px;
+}
+.cancelbtn, .Login{
+    font-size: 18px;
+    font-weight: 300;
+    color: rgb(84, 196, 84);
+    padding: 3px 8px;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+}
+.userId{
+    background-color: rgb(72, 135, 243);
+    padding: 16px;
+    justify-content: center;
+}
+
 .infoBox .rules .ruleInfo{
     margin: 5px O;
     font-size: 15px;
@@ -402,7 +447,7 @@ background: rgb(111, 223, 111);
         }
     }
 
-    .startButton, .infoBox, .quizBox, .resultBox{
+    .startButton, .infoBox, .quizBox, .resultBox, .formBox{
         position: absolute;
         top: 50%;
         left: 50%;
@@ -444,6 +489,49 @@ background: rgb(111, 223, 111);
     }
     .rules{
         padding: 15px 20px;
+    }
+    .formBox{
+        border-radius: 6px;
+    }
+    .container{
+        background-color: rgb(104, 249, 189);
+        height: 200px;
+        border-radius: 6px;
+    }
+    .container img{
+        position: absolute;
+        width: 30%;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease;
+    }
+    .container .heading{
+        width: 300px;
+        text-align: center;
+        border: 2px solid rgb(100, 248, 100);
+        padding: 10px;
+        height: 110px;
+        border-radius: 6px;
+    }
+    .cancelbtn, .Login{
+        font-size: 18px;
+        font-weight: 300;
+        color: rgb(84, 196, 84);
+        padding: 3px 8px;
+        outline: none;
+        border: none;
+        border-radius: 6px;
+        background-color: white;
+        cursor: pointer;
+    }
+    .userId{
+        background-color: rgb(72, 135, 243);
+        padding: 16px;
+        justify-content: center;
+    }
+    .startButton{
+        display: none;
     }
     .infoBox .rules .ruleInfo{
         margin: 5px O;

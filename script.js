@@ -8,6 +8,19 @@ const timeCount = quizBox.querySelector(".timer .timerSec");
 const timeLine = quizBox.querySelector("header .timeLine");
 const timeOff = quizBox.querySelector("header .timerText");
 
+
+document.getElementById("asd").style.display="none";
+document.getElementById("asd").style.display="block";
+
+function asd(a){
+    if (a==1) {
+        document.getElementById("asd").style.display="none";
+    } else {
+        document.getElementById("asd").style.display="block";
+
+    }
+}
+
 const optionList = document.querySelector(".optionList");
 
 //when start quiz button is clicked

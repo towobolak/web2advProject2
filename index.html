@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Applied Mechanics (MEG 524)</title>
 </head>
@@ -21,6 +21,35 @@
         <span></span>
     </div>
 
+<div class="formBox">
+        <form id="asd" action="">
+            <div class="container">
+                <img src="./images/unilag.png" alt="">
+                <div class="heading">
+                <h3>Department of Mechanical Engineering</h3>
+                <p>University of Lagos</p>
+                <p>2nd Semester Examination</p><br>
+                </div>
+              <div class="userId">
+                <label ><b>Username</b></label>
+              <input class="usernn" type="text" placeholder="Enter Username" name="uname" required><br>
+          
+              <label><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required><br>
+          
+              <button onclick="asd(1)" class="Login" type="submit">Login</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+              </div>
+            </div>
+          
+            <div class="container">
+              <button onclick="asd(2)" type="button" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+    </div>
 
     <div class="startButton">
         <button>Start Quiz</button>
@@ -101,35 +130,11 @@
         </div>
     </div>
 
-    <script src="questions.js"></script>
-    <script src="script.js"></script>
+    <script src="./questions.js"></script>
+    <script src="./script.js"></script>
 
 </body>
 </html> 
 
 
 
-<!-- <div class="form">
-        <form action="">
-            <div class="container">
-                <h3>Department of Mechanical Engineering</h3>
-                <p>University of Lagos</p>
-                <p>2nd Semester Examination</p><br>
-              <label ><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required><br>
-          
-              <label><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required><br>
-          
-              <button type="submit">Login</button>
-              <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label>
-            </div>
-          
-            <div class="container">
-              <button type="button" class="cancelbtn">Cancel</button>
-              <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-          </form>
-    </div> -->
