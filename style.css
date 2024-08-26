@@ -530,9 +530,7 @@ background: rgb(111, 223, 111);
         padding: 16px;
         justify-content: center;
     }
-    .startButton{
-        display: none;
-    }
+    
     .infoBox .rules .ruleInfo{
         margin: 5px O;
         font-size: 15px;
