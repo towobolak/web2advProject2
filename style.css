@@ -14,14 +14,12 @@ body{
     transform: translate(-50%, -50%);
     transition: all 0.3s ease;
 }
-
-.infoBox.activateInfo, .quizBox.activateQuiz{
+.infoBox.activateInfo, .quizBox.activateQuiz, .resultBox.activateResult{
     z-index: 5;
     opacity: 1;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
 }
-
 .startButton button{
     font-size: 18px;
     font-weight: 300;
@@ -149,6 +147,13 @@ padding: 4px;
     border-radius: 6px;
     user-select: none;
 }
+.quizBox header .timeLine{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: red;
+}
 .quizBox section{
 padding: 25px 30px 20px 30px;
 background: white;
@@ -202,6 +207,19 @@ section .optionList .option:last-child{
     border-color: rgb(252, 57, 57);
     background:  rgb(251, 255, 251);
 }
+.optionList .option.correct{
+    color: rgb(57, 252, 57);
+    border-color:  rgb(57, 252, 57);
+    background: #d4edda;
+}
+.optionList .option.incorrect{
+    color: rgb(252, 57, 57);
+    border-color: rgb(252, 57, 57);
+    background:  rgb(251, 255, 251);
+}
+.optionList .option.disabled{
+    pointer-events: none;
+}
 .quizBox footer{
     height: 60px;
     width: 100%;
@@ -223,6 +241,7 @@ footer .totalQue span p:first-child{
     padding-left: 0px;
 }
 footer .previousPage, .nextPage{
+    display: none;
     height: 40px;
     padding: 0 13px;
     font-size: 17px;
@@ -283,6 +302,7 @@ background: rgb(111, 223, 111);
     transition: all 0.3s ease;
 }
 }
+
 @media only screen and (min-width: 768px) {
     .containerDesktop{
         background-color: rgb(71, 129, 238);
@@ -382,12 +402,18 @@ background: rgb(111, 223, 111);
         }
     }
 
-    .startButton, .infoBox, .resultBox{
+    .startButton, .infoBox, .quizBox, .resultBox{
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         transition: all 0.3s ease;
+    }
+    .infoBox.activateInfo, .quizBox.activateQuiz, .resultBox.activateResult{
+        z-index: 5;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%) scale(1);
     }
     .startButton button{
         font-size: 18px;
@@ -401,18 +427,12 @@ background: rgb(111, 223, 111);
         cursor: pointer;
     }
     .infoBox{
-        width: 300px;
+        width: 90%;
         background-color: white;
         border-radius: 6px;
         opacity: 0;
         pointer-events: none;
         transform: translate(-50%, -50%) scale(0.8);
-    }
-    .infoBox.activateInfo{
-        z-index: 5;
-        opacity: 1;
-        pointer-events: auto;
-        transform: translate(-50%, -50%) scale(1);
     }
     .infoBox .informationTitle {
         width: 100%;
@@ -479,16 +499,21 @@ background: rgb(111, 223, 111);
         position: relative;
         height: 70px;
         padding: 0 30px;
-        background: white;
+        background: rgba(118, 214, 147, 0.59);
         display: flex;
         align-items: center;
         justify-content: space-between;
         border-radius: 5px 5px 0 0;
         box-shadow: 0px 2px 4px 1px grey;
     }
+    .quizBox header img{
+        width: 12%;
+        padding-right: 10px;
+    }
     .quizBox header .title{
         font-size: 20px;
         font-weight: 600;
+        padding-right: 10px;
     }
     .quizBox header .timer{
     display: flex;
@@ -516,6 +541,13 @@ background: rgb(111, 223, 111);
         line-height: 30px;
         border-radius: 6px;
         user-select: none;
+    }
+    .quizBox header .timeLine{
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        height: 3px;
+        background: red;
     }
     .quizBox section{
     padding: 25px 30px 20px 30px;
@@ -570,6 +602,19 @@ background: rgb(111, 223, 111);
         border-color: rgb(252, 57, 57);
         background:  rgb(251, 255, 251);
     }
+    .optionList .option.correct{
+        color: rgb(57, 252, 57);
+        border-color:  rgb(57, 252, 57);
+        background: #d4edda;
+    }
+    .optionList .option.incorrect{
+        color: rgb(252, 57, 57);
+        border-color: rgb(252, 57, 57);
+        background:  rgb(251, 255, 251);
+    }
+    .optionList .option.disabled{
+        pointer-events: none;
+    }
     .quizBox footer{
         height: 60px;
         width: 100%;
@@ -591,6 +636,7 @@ background: rgb(111, 223, 111);
         padding-left: 0px;
     }
     footer .previousPage, .nextPage{
+        display: none;
         height: 40px;
         padding: 0 13px;
         font-size: 17px;
@@ -621,7 +667,7 @@ background: rgb(111, 223, 111);
         transform: translate(-50%, -50%) scale(0.8);
     }
     .resultBox .icon img{
-        width: 30%;
+        width: 20%;
     }
     .resultBox .complete{
         font-size: 20px;
@@ -650,4 +696,5 @@ background: rgb(111, 223, 111);
         cursor: pointer;
         transition: all 0.3s ease;
     }
-    }
+}
+
