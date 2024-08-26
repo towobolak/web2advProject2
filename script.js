@@ -8,9 +8,7 @@ const timeCount = quizBox.querySelector(".timer .timerSec");
 const timeLine = quizBox.querySelector("header .timeLine");
 const timeOff = quizBox.querySelector("header .timerText");
 
-
 const optionList = document.querySelector(".optionList");
-
 
 //when start quiz button is clicked
 startButton.onclick = ()=>{
@@ -92,7 +90,6 @@ function showQuestions(index){
 
 let tickIcon ='<div class="icon tick"><i class="fa fa-check"></i></div>'
 let crossIcon ='<div class="icon cross"><i class="fa fa-times"></i></div>'
-
 
 function optionSelected(answer){
     clearInterval(counter);
@@ -189,4 +186,3 @@ function startTimerLine(time){
         }
     }
 }
-
